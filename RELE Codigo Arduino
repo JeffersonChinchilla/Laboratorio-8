@@ -1,0 +1,35 @@
+int redLED = 2;
+int yellowLED = 3;
+int greenLED = 4;
+
+// Definir el tiempo de cada estado del semáforo en milisegundos
+int redTime = 5000;    // 5 segundos
+int yellowTime = 2000; // 2 segundos
+int greenTime = 5000;  // 5 segundos
+
+void setup() {
+  // Configurar los pines de las luces LED como salida
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+}
+
+void loop() {
+  // Encender luz roja
+  digitalWrite(redLED, HIGH);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(greenLED, LOW);
+  delay(redTime);
+
+  // Encender luz amarilla
+  digitalWrite(redLED, LOW);
+  digitalWrite(yellowLED, HIGH);
+  digitalWrite(greenLED, LOW);
+  delay(yellowTime);
+
+  // Encender luz verde
+  digitalWrite(redLED, LOW);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(greenLED, HIGH);
+  delay(greenTime);
+}
